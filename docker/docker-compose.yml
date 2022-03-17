@@ -1,0 +1,19 @@
+version: '3.5'
+services:
+  mongosvc:
+    image: mongo
+    ports:
+      - "27017:27017"
+  mongo-data-seed:
+    build: ./mongo-data
+    links:
+      - mongosvc
+  challenge:
+    build: ../.
+    image: challenge:v1
+    ports:
+      - "8080:8080"
+    environment:
+      - spring_data_mongodb_uri=mongodb://mongosvc:27017/btcprice
+    depends_on:
+      - mongosvc

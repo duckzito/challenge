@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "873eead9-2ae2-48dc-afa4-6a0359ccdc94",
+		"name": "Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "a) Obtener el precio del Bitcoin en pesos argentinos (objeto btcars en la API de buenbit) en cierto timestamp.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/challenge/price?date=2021-08-16T09:39:36",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"challenge",
+						"price"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2021-08-16T09:39:36"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "b) Conocer el promedio de precio entre dos timestamps ingresados por parametros.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/challenge/price/average?first=2021-08-13T23:20:00&second=2021-08-18T23:22:00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"challenge",
+						"price",
+						"average"
+					],
+					"query": [
+						{
+							"key": "first",
+							"value": "2021-08-13T23:20:00"
+						},
+						{
+							"key": "second",
+							"value": "2021-08-18T23:22:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "c) Devolver en forma paginada los datos almacenados con o sin filtro de timestamp.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/challenge/prices?first=2021-08-13T23:20:00&second=2022-08-13T23:22:00&page=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"challenge",
+						"prices"
+					],
+					"query": [
+						{
+							"key": "first",
+							"value": "2021-08-13T23:20:00"
+						},
+						{
+							"key": "second",
+							"value": "2022-08-13T23:22:00"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "c.1)Devolver en forma paginada los datos almacenados con o sin filtro de timestamp.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/challenge/prices?page=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"challenge",
+						"prices"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
